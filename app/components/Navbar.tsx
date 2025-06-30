@@ -27,9 +27,14 @@ export default function Navbar({ links, ctaText, ctaHref }: NavbarProps) {
             className="sticky top-0 z-50 bg-white shadow-sm"
         >
             <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-                {/* Logo */}
-                <Link href="/" className="text-2xl font-bold text-blue-800">
-                    Dr. Choel
+                {/* Logo con imagen */}
+                <Link href="/" className="flex items-center space-x-2">
+                    <img
+                        src="/icon_brain_nobg.png"
+                        alt="Logo Dr. Choel"
+                        className="h-11 w-auto"
+                    />
+                    <span className="text-2xl font-bold text-blue-800">Dr. Choel</span>
                 </Link>
 
                 {/* Desktop nav */}
