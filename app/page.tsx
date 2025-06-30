@@ -1,103 +1,138 @@
-import Image from "next/image";
+import Navbar from './components/Navbar'
+import Footer from './components/Footer'
+import HeroSection from './components/HeroSection'
+import DoctorInfo from './components/DoctorInfo'
+import BotonWhatsapp from './components/BotonWhatsApp'
+import SocialButtons from './components/SocialButtons'
+import ServicesSection from './components/ServiceSection'
+import ReviewSection from './components/ReviewSection'
+import UbicacionesSection from './components/UbicacionSeccion'
 
 export default function Home() {
-  return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const navLinks = [
+    { label: 'Inicio', href: '/' },
+    { label: 'Sobre el Doctor', href: '#doctor' },
+    { label: 'Servicios', href: '#servicios' },
+    { label: 'Reseñas', href: '#reseñas' },
+    { label: 'Ubicación', href: '#contacto' }
+  ]
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+  const serviciosNeuro = [
+    'Cirugía fosa posterior',
+    'Visitas sucesivas Neurocirugía',
+    'Artrodesis cervical anterior',
+    'Artrodesis cervical posterior',
+    'Biopsia cerebral abierta',
+    'Cambio o retirada de válvula en hidrocefálias',
+    'Primera visita Neurocirugía',
+    'Cirugía de fístula de líquido cefalorraquídeo',
+    'Cirugía de hernia discal cervical',
+    'Cirugía de la estenosis raquídea',
+    'Cirugía de lesiones cerebrales',
+    'Cirugía de reparación de tumores cerebrales',
+    'Consulta en línea',
+    'Laminectomías dorsales o lumbares',
+    'Cirugía de columna',
+    'Visita Neurocirugía',
+    'Microcirugía de hernia de disco'
+  ]
+
+  type Ubicacion = {
+    nombre: string;
+    link?: string;
+    tipo: 'fisica' | 'en_linea';
+  };
+  
+  const ubicaciones: Ubicacion[] = [
+    {
+      nombre: 'Clínica San Jerónimo',
+      link: 'https://www.google.com/maps/place/25%C2%B041\'02.6%22N+100%C2%B021\'22.2%22W/@25.6840572,-100.3561707,17z',
+      tipo: 'fisica',
+    },
+    {
+      nombre: 'Hospital Las Palmas',
+      link: 'https://www.google.com/maps/search/?api=1&query=25.7666016,-100.3077393',
+      tipo: 'fisica',
+    },
+    {
+      nombre: 'Consulta en línea',
+      tipo: 'en_linea',
+    },
+  ];
+
+  const reseñas = [
+    {
+      nombre: 'Norma Martínez',
+      texto: 'Fue mi primer cita y me sentí muy agusto, me mandó hacer estudios y sin duda regresaré, muy amable, muy amena la consulta.',
+      estrellas: 5,
+      fuente: 'Doctoralia',
+      link: 'https://www.doctoralia.com.mx/carlos-enrique-hernandez-choel/neurocirujano/general-escobedo#profile-reviews',
+    },
+    {
+      nombre: 'Lourdes Ortiz',
+      texto: 'Excelente servicio y un gran doctor. Altamente recomendado!',
+      estrellas: 5,
+      fuente: 'Doctoralia',
+      link: 'https://www.doctoralia.com.mx/carlos-enrique-hernandez-choel/neurocirujano/general-escobedo#profile-reviews',
+    },
+    {
+      nombre: 'Martha Garza',
+      texto: 'Puntualidad, Paciencia y dedicación en el estudio qué me realizo. Lo recomiendo!',
+      estrellas: 5,
+      fuente: 'Otro',
+    },
+  ]
+
+  return (
+    <>
+      <Navbar
+        links={navLinks}
+        ctaText="Agendar cita"
+        ctaHref="https://wa.me/5281476272255?text=Hola%20Dr.%20Carlos%20Enrique,%20me%20gustaría%20agendar%20una%20cita."
+      />
+
+
+      <main className="min-h-screen">
+        {          /* Hero Section */}
+        <HeroSection
+          titulo="Bienvenido a la Clínica del Dr. Carlos Enrique Hernandez Choel"
+          subtitulo="Tu salud es nuestra prioridad"
+          ctaTexto="Contáctanos"
+          ctaLink="https://wa.me/5281476272255?text=Hola%20Dr.%20Carlos%20Enrique,%20me%20gustaría%20agendar%20una%20cita."
+          imagenSrc="/neuro_hero.png"
+          align="center"
+          fullHeight={true}
+        />
+
+        <DoctorInfo
+          nombre="Dr. Carlos Enrique Hernández Choel"
+          descripcion="Médico Neurocirujano especializado en cirugía cerebral y de columna. Con experiencia en tratamientos de alta complejidad, abordaje mínimamente invasivo y atención tanto a adultos como a población pediátrica."
+          especialidades={[
+            'Tumores cerebrales',
+            'Epilepsia',
+            'Astrocitoma en niños',
+            'Tumor medular'
+          ]}
+          formacion="Universidad de Monterrey (UDEM) y Unidad Médica de Alta Especialidad IMSS 25"
+          cedula='Cédula Profesional: 7443058'
+          idiomas="Español e inglés"
+          imagenSrc="/dr_choel.jpg"
+        />
+
+        <ServicesSection servicios={serviciosNeuro} />
+
+        <ReviewSection reseñas={reseñas} />
+
+        <UbicacionesSection ubicaciones={ubicaciones} />
+
+        <SocialButtons
+          doctoralia="https://www.doctoralia.com.mx/carlos-enrique-hernandez-choel/neurocirujano/general-escobedo"
+        // instagram="https://www.instagram.com/capill.arte/"
+        // tiktok="https://www.tiktok.com/@capillarte"
+        />
       </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
-  );
+      <BotonWhatsapp />
+      <Footer />
+    </>
+  )
 }
