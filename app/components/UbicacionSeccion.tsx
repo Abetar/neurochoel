@@ -15,7 +15,7 @@ interface UbicacionesSectionProps {
 
 const UbicacionesSection: React.FC<UbicacionesSectionProps> = ({ ubicaciones }) => {
     return (
-        <section className="py-20 px-4 md:px-24 bg-gray-50 text-center">
+        <section className="py-20 px-4 md:px-24 bg-gray-50 text-center" id='ubicaciones'>
             <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-10">
                 Ubicaciones
             </h2>

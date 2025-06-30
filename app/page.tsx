@@ -14,7 +14,7 @@ export default function Home() {
     { label: 'Sobre el Doctor', href: '#doctor' },
     { label: 'Servicios', href: '#servicios' },
     { label: 'Reseñas', href: '#reseñas' },
-    { label: 'Ubicación', href: '#contacto' }
+    { label: 'Ubicación', href: '#ubicaciones' }
   ]
 
   const serviciosNeuro = [

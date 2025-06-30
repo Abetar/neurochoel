@@ -11,7 +11,7 @@ const offset = [0, -1, -2, -3, -4, -3, -2, -1, 0, 1, 2, 3, 4, 3, 2, 1, 0]
 
 const SpineSection: React.FC<SpineSectionProps> = ({ servicios, titulo = 'Servicios' }) => {
     return (
-        <section className="relative py-16 px-4 flex justify-center items-center flex-col bg-blue-100">
+        <section className="relative py-16 px-4 flex justify-center items-center flex-col bg-blue-100" id = "servicios">
             <h2 className="text-3xl font-bold text-blue-800 mb-10 text-center z-10">{titulo}</h2>
 
             <div className="relative w-full max-w-3xl flex flex-col items-center gap-3">
