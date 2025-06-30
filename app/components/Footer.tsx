@@ -1,7 +1,7 @@
 export default function FooterSitio() {
     return (
         <footer className="bg-black-100 text-center text-sm text-grey-800 py-6">
-            <p className="mb-2">© {new Date().getFullYear()} Capillarte. Todos los derechos reservados.</p>
+            <p className="mb-2">© {new Date().getFullYear()} Dr Carlos Enrique Hernandez Choel. Todos los derechos reservados.</p>
             <p className="text-xs text-grey-700">
                 Sitio desarrollado por{" "}
                 <a
