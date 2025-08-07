@@ -37,6 +37,13 @@ export default function Home() {
     'Microcirugía de hernia de disco'
   ]
 
+
+type Ubicacion = {
+  nombre: string;
+  link?: string;
+  tipo: 'fisica' | 'en_linea';
+};
+
 const ubicaciones: Ubicacion[] = [
   {
     nombre: 'Clínica San Jerónimo',
