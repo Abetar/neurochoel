@@ -37,28 +37,22 @@ export default function Home() {
     'Microcirugía de hernia de disco'
   ]
 
-  type Ubicacion = {
-    nombre: string;
-    link?: string;
-    tipo: 'fisica' | 'en_linea';
-  };
-  
-  const ubicaciones: Ubicacion[] = [
-    {
-      nombre: 'Clínica San Jerónimo',
-      link: 'https://www.google.com/maps/place/25%C2%B041\'02.6%22N+100%C2%B021\'22.2%22W/@25.6840572,-100.3561707,17z',
-      tipo: 'fisica',
-    },
-    {
-      nombre: 'Hospital Las Palmas',
-      link: 'https://www.google.com/maps/search/?api=1&query=25.7666016,-100.3077393',
-      tipo: 'fisica',
-    },
-    {
-      nombre: 'Consulta en línea',
-      tipo: 'en_linea',
-    },
-  ];
+const ubicaciones: Ubicacion[] = [
+  {
+    nombre: 'Clínica San Jerónimo',
+    link: 'https://www.google.com/maps/place/25%C2%B041\'02.6%22N+100%C2%B021\'22.2%22W/@25.6840572,-100.3561707,17z',
+    tipo: 'fisica',
+  },
+  {
+    nombre: 'Hospital Las Palmas',
+    link: 'https://www.google.com/maps/search/?api=1&query=25.7666016,-100.3077393',
+    tipo: 'fisica',
+  },
+  {
+    nombre: 'Consulta en línea',
+    tipo: 'en_linea',
+  },
+]
 
   const reseñas = [
     {
