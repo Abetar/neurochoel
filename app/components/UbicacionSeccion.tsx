@@ -1,6 +1,6 @@
 'use client'
 
-import { Monitor, MapPin } from 'lucide-react'
+import { Monitor } from 'lucide-react'
 import { motion } from 'framer-motion'
 
 interface Ubicacion {
