@@ -12,7 +12,7 @@ const offset = [0, -1, -2, -3, -4, -3, -2, -1, 0, 1, 2, 3, 4, 3, 2, 1, 0]
 export default function SpineSection({ servicios, titulo = 'Servicios' }: SpineSectionProps) {
   return (
     <section className="relative py-16 px-4 flex justify-center items-center flex-col bg-[#f5f5f5] text-[#0f0e17]" id="servicios">
-      <h2 className="text-4xl font-serif text-center mb-10 border-b-2 border-gold inline-block">
+      <h2 className="text-4xl text-center mb-10 border-b-2 border-gold inline-block">
         {titulo}
       </h2>
 
